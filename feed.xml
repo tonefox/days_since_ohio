@@ -3,9 +3,9 @@
   <channel>
     <title>Days Since Ohio Crash</title>
     <link>https://dayssinceohiocrash.com</link>
-    <description>Tracking every incident where a car has driven into a building in the Columbus, Ohio metro area. Sourced. Verified. Satirical. Currently: 3 day(s) since last incident.</description>
+    <description>Tracking every incident where a car has driven into a building in the Columbus, Ohio metro area. Sourced. Verified. Satirical. Currently: 66 day(s) since last incident.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Apr 2026 17:46:04 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2026 18:38:30 +0000</lastBuildDate>
     <atom:link href="https://dayssinceohiocrash.com/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://dayssinceohiocrash.com/icon-192.png</url>
@@ -13,76 +13,108 @@
       <link>https://dayssinceohiocrash.com</link>
     </image>
     <item>
-      <title>Car plows into Dublin Chipotle, driver reportedly 'missed the drive-thru'</title>
-      <link>https://www.nbc4i.com/news/local-news/dublin-car-crashes-into-chipotle-sawmill-rd-2026-04-08/</link>
-      <description>Car plows into Dublin Chipotle, driver reportedly 'missed the drive-thru' — The guac survived. The storefront did not. Investigators confirm the queso was at fault. | Sawmill Rd Chipotle, Dublin OH | via NBC4i Columbus</description>
-      <pubDate>Wed, 08 Apr 2026 12:00:00 +0000</pubDate>
+      <title>Stolen car crashed into Dublin Donatos after attempted traffic stop</title>
+      <link>https://news.google.com/rss/articles/CBMiswFBVV95cUxNT09nOXItX0x4UTdReDM4aWFwTHZadE5WM3I1RTJ3QU4xcFFyOXBwcWJ5dWpCQkh2TmJ2bTFad2pFdThDLTk0dW83OG13eDJxRkdiTC1zUl9XOUxhRmVyT0hfMEZVT3ZRbkdQZlEyWUJjSHNIVmR5MVlSb0xJeVFTb3JxMXZ3QkUyOUVKeGwtWC1wWnZjWDV5Y0FUUnN1SGRhS3o1MVhmc1ZHXzMzUDFXR1pYWdIBuAFBVV95cUxPMlVOUVg5bVBIdWJIdXMzYlJuaV9rT0pkX3FyZS1FMThHSk8wbXd3RFBxM0trV0JNZ280TV9zV09XQ0h4UUFQVlBkWnFmMDVqQkN5eG90YkY4R29fMi0tbkNoQmlWVnBMRUdQU0lkREZTZEJIcjJ0dGJsNDY0SXRHTXhMd2hiLWV5WG5Da0VGT1A1QWV4YU5KTVY0SWZfeVFQT2c5N05sLW85MGJjelRaR2VubnltQU0w?oc=5</link>
+      <description>Stolen car crashed into Dublin Donatos after attempted traffic stop — The driver stole a car, fled police, and chose a Donatos as their final destination. Bold pizza order. | Donatos Pizza, Dublin OH | via NBC4 WCMH-TV</description>
+      <pubDate>Wed, 04 Feb 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/1</guid>
       <category>Restaurant</category>
     </item>
     <item>
-      <title>Vehicle crashes into Dollar General on East Broad, third such incident at this location</title>
-      <link>https://www.10tv.com/article/news/local/columbus/car-crashes-dollar-general-east-broad-2026-03-22/530-abc123/</link>
-      <description>Vehicle crashes into Dollar General on East Broad, third such incident at this location — This Dollar General has now been hit more times than its clearance sale items. Three-star crash status achieved. | E Broad St Dollar General, Columbus OH | via WBNS 10TV</description>
-      <pubDate>Sun, 22 Mar 2026 12:00:00 +0000</pubDate>
+      <title>Columbus restaurant donating food to pantries after car crashes into building</title>
+      <link>https://news.google.com/rss/articles/CBMitgFBVV95cUxPZ3E0bXdqZmN4RFVhZlM2UkF6TERka2lGQ19oWllYQy16TnM1bnh3eWJhYzFlQW5KR2hVYU04SlR1NXlJOUZUMUJNOGJsWHpfNFBVaUpfU0dPM0VrNV9pMTNlRkRfRmxqSGl6VXozMGk3bk1ieFpiQ2NKRjY1OFdaRkdEUENyUHhsRk91REdZM0ZzdnFYZjdvNXZqYkhJb3ZGYjFxZTA1aEpiMVBtdTkyalZ4VjI4UQ?oc=5</link>
+      <description>Columbus restaurant donating food to pantries after car crashes into building — Survived a car crash. Still made sure the community ate. Honestly more functional than most of us after a crisis. | Columbus restaurant (undisclosed), Columbus OH | via NBC4 WCMH-TV</description>
+      <pubDate>Thu, 29 Jan 2026 12:00:00 +0000</pubDate>
       <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/2</guid>
+      <category>Restaurant</category>
+    </item>
+    <item>
+      <title>Mezcla closes after car crashes into building</title>
+      <link>https://news.google.com/rss/articles/CBMiigFBVV95cUxNakVDdzd0UzhyN2xjd0J4TzdRM2pucmtFNExDWVVKOUZENUV3VGVoVi0wVzVMY0dPMy1OaWJmUnpXTTN0SDhWSk5HMERnRFFYSDROS0wzLXQxRnBzVUpHVEV0dkctYmJrS3VZUzYyTEFKUjZuMUlCXy1tUlBMNGdVNXJlMjhNeXcwamc?oc=5</link>
+      <description>Mezcla closes after car crashes into building — A beloved Short North restaurant. Closed by a car, not by critics. The car left no Yelp review. | Mezcla Restaurant, N High St, Columbus OH | via Columbus Underground</description>
+      <pubDate>Fri, 23 Jan 2026 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/3</guid>
+      <category>Restaurant</category>
+    </item>
+    <item>
+      <title>Kids as young as 8 steal car, flee police, crash into home</title>
+      <link>https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRmlyT2RzeVlsdzlVclFiTlMyZmxzRDRodTdraTJTazBuZFpBZnlpNFN1OWpiNC02cjlDRTF2N0hJbnNsaXl4TC13UUNiQ1oxblhfZEJzTDJURTVQWlpnblNIb2x6LUhzdFVtTU1pcFFfaW5LOUZjcXlTZjVaTERkRGtIS182ejF4em9QTi0zX1R3TWw2eVdOaXFjX3kwSnowcEhpTHhVUFFZZHJFVzVmQjExY05lVUdpZTVN0gHAAUFVX3lxTE9Ddk0tYlhxU0lxMnNjYlotbnJ4czN6QzNLMXdKOVpUbU9VMTM5ODNKcEdQc0pfZzBwNU5vM21fOVZqSlNRSjZwc1YzZGRFNjFoR3JYQXdEM2pyRldvdzlxcUY3YjFmWDJrcDZOb3pZeFZBNkpzZHJMal9zQWJYVmt2eU9OdktMMDBLOUMyN0pzNFJlWG85OXM5U25nY0prOVlrYUdyX3FFeVozV0ttUEdNRnVhZFJrMFhUaTc1WG1lRQ?oc=5</link>
+      <description>Kids as young as 8 steal car, flee police, crash into home — Eight years old. Stole a car. Fled police. Crashed into a house. Ohio's youngest urban planner. | Residential home, Columbus OH | via Google News / Local</description>
+      <pubDate>Mon, 22 Dec 2025 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/4</guid>
+      <category>Home / Residence</category>
+    </item>
+    <item>
+      <title>Gahanna salon remains open despite car crashing into building</title>
+      <link>https://news.google.com/rss/articles/CBMiwAFBVV95cUxQdTZiSzlwT2l2VTRXVGlkQlhEV1pRSFVtRlBlU056dmIwVVRMZ0wxbVJHQ3kxd294ZzNZVVhLYS1GVlF2MWxDSHl6NVFRQ0RFVW9pS25IV3M4cDcyRFdfT2lQM1ZRblVtUzFYbGQyeGtQR2ZyT0hGQmpuS3dlQ0lFMHd0amJKS21XS2ZYV05JR01fNlZVM0RrUUxsTjVGLXNZb0xRUndXNGw1ZmtXSV9Id0lYcEh2eDU5SUxOX1BzVm8?oc=5</link>
+      <description>Gahanna salon remains open despite car crashing into building — The car came in without an appointment. They still finished the blowouts. Professionals. | Gahanna salon, Gahanna OH | via 614NOW</description>
+      <pubDate>Wed, 10 Sep 2025 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/5</guid>
       <category>Retail</category>
     </item>
     <item>
-      <title>Car crashes through Westerville Walgreens storefront; pharmacist reportedly unfazed</title>
-      <link>https://www.dispatch.com/story/news/local/westerville/2026/03/10/car-crashes-walgreens-state-street-westerville/12345678007/</link>
-      <description>Car crashes through Westerville Walgreens storefront; pharmacist reportedly unfazed — The pharmacist filled two more prescriptions before calling 911. True professional. | State St Walgreens, Westerville OH | via Columbus Dispatch</description>
-      <pubDate>Tue, 10 Mar 2026 12:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/3</guid>
-      <category>Pharmacy</category>
-    </item>
-    <item>
-      <title>SUV crashes into Polaris Panera; 'You Pick Two' now includes structural damage</title>
-      <link>https://abc6onyourside.com/news/local/franklin-county/2026/02/28/suv-crashes-panera-bread-polaris-parkway-columbus-ohio/</link>
-      <description>SUV crashes into Polaris Panera; 'You Pick Two' now includes structural damage — Staff continued making souffles. No soup was harmed. The bread bowl held its shape better than the wall. | Polaris Pkwy Panera Bread, Columbus OH | via ABC6</description>
-      <pubDate>Sat, 28 Feb 2026 12:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/4</guid>
-      <category>Restaurant</category>
-    </item>
-    <item>
-      <title>Vehicle crashes into Gahanna AutoZone — staff immediately offered to check the airbags</title>
-      <link>https://www.dispatch.com/story/news/local/gahanna/2026/02/14/car-crashes-autozone-hamilton-road-gahanna/98765432001/</link>
-      <description>Vehicle crashes into Gahanna AutoZone — staff immediately offered to check the airbags — Poetic. A car. Into a car parts store. The universe has a sense of humor and it is Ohio. | N Hamilton Rd AutoZone, Gahanna OH | via Columbus Dispatch</description>
-      <pubDate>Sat, 14 Feb 2026 12:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/5</guid>
-      <category>Auto Parts Store</category>
-    </item>
-    <item>
-      <title>Car crashes into Hilliard Kroger entrance; shopper says it was 'the most exciting thing to happen in Hilliard since 2019'</title>
-      <link>https://www.10tv.com/article/news/local/hilliard/car-crashes-kroger-cemetery-road-hilliard-ohio/530-def456/</link>
-      <description>Car crashes into Hilliard Kroger entrance; shopper says it was 'the most exciting thing to happen in Hilliard since 2019' — Store remained open. Self-checkout lanes unaffected. The car is now in produce. | Cemetery Rd Kroger, Hilliard OH | via WBNS 10TV</description>
-      <pubDate>Fri, 30 Jan 2026 12:00:00 +0000</pubDate>
+      <title>Car crashes into building near Ohio State, injuring three people</title>
+      <link>https://news.google.com/rss/articles/CBMijAJBVV95cUxOT2tGNmdJY1o0NHFucEZQSGR4Nm9VbGp0YWxLa1QtZ2xXZzhLcnY4TlQyVENoX0F6eDBPS093dXlhRjI1ZVRUSTAzUzVhSkVZcUw2bWtZVFRFVHRxWm9DckpDaS1nWENUbmNXRzZpRWdDd3JlUE5nb0pQVS1MNTMwbW93YnJsR3Qtc0VweXVGbjlwVElVTTVxMHJTZFUzN0dzUE9FcGc2RGxqbWwxTGJFYlkxRVhtWVhjZDFITjhvbTVuVDNZbnN1cTA4SjRGckFpWVNHaWpnXzh3STgxTHhJbkQyalBBRFJNaHVzajZ2MVhxYXJRZ0x2NmMxY2lCUVFlQzJFWmRDVnRoQUtn?oc=5</link>
+      <description>Car crashes into building near Ohio State, injuring three people — Three injured near Ohio State. The building was not on the syllabus. The driver did not pass. | Building near Ohio State campus, Columbus OH | via WSYX ABC6</description>
+      <pubDate>Sat, 09 Aug 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/6</guid>
-      <category>Grocery</category>
+      <category>Retail</category>
     </item>
     <item>
-      <title>Pickup truck drives through Pizza Hut on Morse Rd; delivery was still on time</title>
-      <link>https://www.nbc4i.com/news/local-news/pickup-truck-crashes-pizza-hut-morse-road-columbus/</link>
-      <description>Pickup truck drives through Pizza Hut on Morse Rd; delivery was still on time — The driver may have confused 'hot and ready' with 'floor it.' Stuffed crust undamaged. | Morse Rd Pizza Hut, Columbus OH | via NBC4i Columbus</description>
-      <pubDate>Sun, 11 Jan 2026 12:00:00 +0000</pubDate>
+      <title>Another car crashed into a Columbus building — police say it's part of a growing trend</title>
+      <link>https://news.google.com/rss/articles/CBMi0gFBVV95cUxNSXB4S3h1dk5qNmJKRG5tWlEzWTd4am5yS2VIZUFBRXNqNHFSX0FBaW9VRzMyVUhGNFhsb0YyNHJzNkZYekxaMlFJQjZDWXdERDVhcGxjM1Fld2RvdzZ5MXJYS2lweDRKRVBpMjdiNTFEYm10UVBlaXljRWV5SzZ0QUJQM0hWUkVKYUxTRE9sZE13VlpudDQ2WlZNenF0eHlxd0tVYXZuU0VrU1Zqb2l6eWNuZkRaYWE2dVQzNml4TnJzVjM3WmZWMDVEclVzNjlIY1E?oc=5</link>
+      <description>Another car crashed into a Columbus building — police say it's part of a growing trend — Police have officially classified this as a 'trend.' Columbus buildings are starting to feel like they're being ghosted after agreeing to be hit. | Columbus building (undisclosed), Columbus OH | via NBC4 WCMH-TV</description>
+      <pubDate>Mon, 09 Jun 2025 12:00:00 +0000</pubDate>
       <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/7</guid>
+      <category>Retail</category>
+    </item>
+    <item>
+      <title>FedEx truck plows into home in Westerville</title>
+      <link>https://news.google.com/rss/articles/CBMirwFBVV95cUxQME5TS2VsQlhWeXpnOHplTGxKZDVaem5YUWVMazFsbXZhZWNEeFUwZTB5bDg0RkZCRWw5LWhLQnQ5a3RZcjN5d2g3VXM1TlBlRnhjOF9LRDdqWGtHdU5oOC1SMEpNXzlyZTlfRWdJLUpiUFJkakMwRElKYTJwa2xmZ2FCNWdqLWVBSXUzN01pSkZHQW1wTE5kZjcyb3EzMG5YejhDZEJLWkhOR1ZjQ3lR?oc=5</link>
+      <description>FedEx truck plows into home in Westerville — The package was delivered. Into the living room. Two-day shipping, one-second entry. | Residential home, Westerville OH | via WSYX ABC6</description>
+      <pubDate>Mon, 28 Apr 2025 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/8</guid>
+      <category>Home / Residence</category>
+    </item>
+    <item>
+      <title>Char Bar to reopen 7 months after car crashed into it on High Street</title>
+      <link>https://news.google.com/rss/articles/CBMi8AFBVV95cUxNaWt3TTdkVHJ1ZjBzZ0xGaFR2d0dZOG1pLXRDOTdQNmhqcy1kOExLdGdpWVp6Zkg5VUlDbDdJN29hd19ZQ0RUamM5QkR1a1lGLXZpOVlObXJnTkxNMVpPTEYyVFJXMTNQQUt5ODl5YnIzbmRCZ2dFckc2STlxZUVIMFZqSTdSN2VZYjNGYmxjUnppX0ZIeFdHQndJQmxsUFhfX3FHV0FieGR5Rkctbks0aFdEbjZyRlJFYVZCa0UzMVFadmJZMTFxS3g5SDFQYkY2Sk92dVJaRFdvS19CaXZDZUJuUUxsdm96d0xZcTRXTFo?oc=5</link>
+      <description>Char Bar to reopen 7 months after car crashed into it on High Street — Seven months of repairs. The car took seconds. The bar took a season. Columbus giveth and Columbus taketh. | Char Bar, High St, Columbus OH | via Columbus Dispatch</description>
+      <pubDate>Mon, 31 Mar 2025 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/9</guid>
       <category>Restaurant</category>
     </item>
     <item>
-      <title>Car drives into Short North CVS; driver cited, CVS receipt still longer than the police report</title>
-      <link>https://www.dispatch.com/story/news/local/short-north/2025/12/19/car-drives-cvs-high-street-short-north-columbus/55544433002/</link>
-      <description>Car drives into Short North CVS; driver cited, CVS receipt still longer than the police report — The receipt for the repair estimate was 47 feet long. CVS brand. | High St CVS, Columbus OH | via Columbus Dispatch</description>
-      <pubDate>Fri, 19 Dec 2025 12:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/8</guid>
-      <category>Pharmacy</category>
+      <title>East Columbus day care sustains damage after car crashes through wall</title>
+      <link>https://news.google.com/rss/articles/CBMi0gFBVV95cUxONGUzSGtETzJwUkR6MmhJQU1fdVZadTQwbDFJMUV3akozNVJoVXNaOEZYR2VhaEdHRExUREQ1bHdwVUVkVVRjMXR6bTcyeWVZRlBsQnZ6OU0wTFJtSjNUZUpfbFZIcG1BVVpjNnBxNWpsQ3JfTVhDMzhUNWhHQU1yU1hSMHVjU1dPWUN3UzBqT29QX2Q0QTVFajA5UVJ1dm1pak5mQXhRcFZnbkNZYnNnS2c0Z1FBTHJDWkROQXVqU1A4bHdGN0RQWEJ6NWhYMVFVZkE?oc=5</link>
+      <description>East Columbus day care sustains damage after car crashes through wall — A car crashed through the wall of a day care. The children, mercifully, were uninjured. The wall was not. | East Columbus day care, Columbus OH | via WBNS 10TV</description>
+      <pubDate>Sun, 02 Mar 2025 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/10</guid>
+      <category>Day Care</category>
     </item>
     <item>
-      <title>Driver loses control on Maize Rd, crashes into occupied home; family inside uninjured</title>
-      <link>https://www.10tv.com/article/news/local/columbus/car-crashes-into-home-maize-road-columbus-ohio/530-ghi789/</link>
-      <description>Driver loses control on Maize Rd, crashes into occupied home; family inside uninjured — The homeowner noted this was 'not the addition we had in mind.' Insurance adjuster was already familiar with the address. | Maize Rd residential home, Columbus OH | via WBNS 10TV</description>
-      <pubDate>Wed, 03 Dec 2025 12:00:00 +0000</pubDate>
-      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/9</guid>
-      <category>Home / Residence</category>
+      <title>Reynoldsburg O'Charley's reopens quickly after car plowed into it</title>
+      <link>https://news.google.com/rss/articles/CBMitgFBVV95cUxOZVpBdm5pWVdrTEkzTmFDSjBCRUdLemN6TGpzRlRRRWRrVlVUTFh2SVZoMFo2ZU1sQTd2ekYxd2prSjZOU0p3N0tzVVM2elgxZ1JoRjVFYURycWdTN0ViSk5vYjR4ZkpveE56UGpMcVRjb1kyTmxXSmF6akV2QkhobjNpYmtHajhlQ2xBeFh3cDVnSFp4OERuSklqVHd1ZzBKUFhsblhOUmFMZXkzSWhFWk1ybFNIUdIBuwFBVV95cUxOV1MyeXN3azBRN3R0WnVmSGhvQm9jNFB5VFFGMjNwcmF5MlpHNGV1ZUJOWFRtR0hNdE1GbTFIb2dDaGdKcWdxZGFJcGZhbGx2ZE8tTVpyTk04V1BnbWtFbXRLV2ZGUlBkeGhYVWx5elo3cFJkTFRoSzA2NUo1MUZ1eGVUQlpDa1A0Wml6OC1rSFJJWUhvSVg4M1dHbXhTX3B5akRmVlZBT2Flbm5NdHpoX2IyUWtSWDQyWU5N?oc=5</link>
+      <description>Reynoldsburg O'Charley's reopens quickly after car plowed into it — Back open fast. A car hit it and it shrugged. Respect the Reynoldsburg grit. | O'Charley's Restaurant, Reynoldsburg OH | via NBC4 WCMH-TV</description>
+      <pubDate>Tue, 24 Sep 2024 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/11</guid>
+      <category>Restaurant</category>
+    </item>
+    <item>
+      <title>Fishburger restaurant in Driving Park damaged after car slams into building</title>
+      <link>https://news.google.com/rss/articles/CBMi0gFBVV95cUxNU01tNlBGTkxxbDF0cGhVdjBEWW55b3JONHJtaXg2VHA1ODZhNVpDUThUY0poU1hfalVKVDJoc252bEpnMlAybnpDUUFkR1FSSTk5M3U3c0dwWEJXRnhoYmc4RVJBV2VYcE9vMkdnYzhVUlJyWW4xM2R3MF9QSEJSMnBnRzIyN0k0Q19QcHlKQS1VeTl2SDdwX25KNjQwbVJadExfU2VtM0VNV2VUbDhWR3g3RG55Q3d2eTRsdVR1T1pIY2hRMkYwU2xwWnUwV0MzeHc?oc=5</link>
+      <description>Fishburger restaurant in Driving Park damaged after car slams into building — A restaurant called Fishburger in a neighborhood called Driving Park. The car was, in retrospect, inevitable. | Fishburger, Driving Park neighborhood, Columbus OH | via Columbus Dispatch</description>
+      <pubDate>Wed, 04 Jan 2023 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/12</guid>
+      <category>Restaurant</category>
+    </item>
+    <item>
+      <title>Columbus police identify 2 teens killed when car crashes into building</title>
+      <link>https://news.google.com/rss/articles/CBMiggJBVV95cUxNeVljbUk2RXhKZnZhejlsU19mejJTQlY5aXE2Vm5HV3RSWXZYU1lpZEV6NTRURF9UbjNhaVhrd0lmaU91b2h6TnkzN2dOVGIxZ1VVc3lrSEhNcHB2R2pVOFJTZ0ZOR3J5ZzFGRFJ1Um5LeWgzZVJ1bng1X3ZPWldCX19nNjgxSFE1N3JCRHpEdFI0cEpYU0x3Z0YwOXB1RGp0UEk5Skd6aFgwbzVrM2NSLWJVUmZDdkRxcjJiM0VlR3g0b0xGZmhXMTJlcFkyVUpKUmdQV2VnZUhVUVdrNkhCeG56RklrRkNKaEVfM2RuNXE0RGFMTUtNVjE3cXl5QnRjNHc?oc=5</link>
+      <description>Columbus police identify 2 teens killed when car crashes into building — No joke here. Two lives lost. This one is in the log because it happened, and it deserves to be remembered. | Columbus building (undisclosed), Columbus OH | via NBC4 WCMH-TV</description>
+      <pubDate>Sun, 08 Dec 2019 12:00:00 +0000</pubDate>
+      <guid isPermaLink="false">https://dayssinceohiocrash.com/incident/13</guid>
+      <category>Retail</category>
     </item>
   </channel>
 </rss>

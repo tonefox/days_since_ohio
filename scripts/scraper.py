@@ -19,8 +19,12 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 import feedparser
-import praw
 import requests
+try:
+    import praw
+    PRAW_AVAILABLE = True
+except ImportError:
+    PRAW_AVAILABLE = False
 from bs4 import BeautifulSoup
 from dateutil import parser as dateparser
 
@@ -175,8 +179,8 @@ def fetch_reddit(seen_hashes: set) -> tuple[list[dict], dict]:
     client_id     = os.environ.get("REDDIT_CLIENT_ID", "")
     client_secret = os.environ.get("REDDIT_CLIENT_SECRET", "")
 
-    if not client_id or not client_secret:
-        log.warning("[Reddit] Skipping — REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET not set")
+    if not PRAW_AVAILABLE or not client_id or not client_secret:
+        log.warning("[Reddit] Skipping — REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET not set (or praw not installed)")
         status = {
             "label":          "Reddit API (PRAW)",
             "requires_setup": True,

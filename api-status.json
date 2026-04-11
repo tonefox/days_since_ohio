@@ -1,14 +1,14 @@
 {
-  "last_run": null,
-  "new_total": 0,
+  "last_run": "2026-04-11T18:02:50.108835+00:00",
+  "new_total": 21,
   "sources": [
     {
       "label": "Google News RSS",
       "requires_setup": false,
-      "status": "never_run",
-      "note": "No auth required. Will scan local Columbus news sources automatically.",
-      "new_candidates": 0,
-      "last_checked": null
+      "status": "ok",
+      "note": "No auth required. 380 articles scanned.",
+      "new_candidates": 21,
+      "last_checked": "2026-04-11T18:02:34.011138+00:00"
     },
     {
       "label": "Reddit API (PRAW)",
@@ -17,15 +17,27 @@
       "note": "Add REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET to GitHub Secrets. Free at reddit.com/prefs/apps.",
       "setup_url": "https://www.reddit.com/prefs/apps",
       "new_candidates": 0,
-      "last_checked": null
+      "last_checked": "2026-04-11T18:02:34.012086+00:00"
     },
     {
       "label": "Columbus PD / Fire (public pages)",
       "requires_setup": false,
-      "status": "never_run",
-      "note": "No auth required. Scrapes public press release pages from Columbus PD and CFD.",
+      "status": "partial",
+      "note": "No auth required. Scrapes public press release pages.",
+      "sources": [
+        {
+          "name": "Columbus Division of Police",
+          "status": "ok",
+          "found": 0
+        },
+        {
+          "name": "Columbus Fire / EMS",
+          "status": "error",
+          "error": "HTTPSConnectionPool(host='www.columbusfire.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f7345d38290>, 'Connection to www.columbusfire.org timed out. (connect timeout=15)'))"
+        }
+      ],
       "new_candidates": 0,
-      "last_checked": null
+      "last_checked": "2026-04-11T18:02:50.106395+00:00"
     }
   ]
 }
