@@ -1,0 +1,31 @@
+{
+  "last_run": null,
+  "new_total": 0,
+  "sources": [
+    {
+      "label": "Google News RSS",
+      "requires_setup": false,
+      "status": "never_run",
+      "note": "No auth required. Will scan local Columbus news sources automatically.",
+      "new_candidates": 0,
+      "last_checked": null
+    },
+    {
+      "label": "Reddit API (PRAW)",
+      "requires_setup": true,
+      "status": "not_configured",
+      "note": "Add REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET to GitHub Secrets. Free at reddit.com/prefs/apps.",
+      "setup_url": "https://www.reddit.com/prefs/apps",
+      "new_candidates": 0,
+      "last_checked": null
+    },
+    {
+      "label": "Columbus PD / Fire (public pages)",
+      "requires_setup": false,
+      "status": "never_run",
+      "note": "No auth required. Scrapes public press release pages from Columbus PD and CFD.",
+      "new_candidates": 0,
+      "last_checked": null
+    }
+  ]
+}

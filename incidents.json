@@ -6,13 +6,13 @@
     "city": "Dublin",
     "county": "Franklin",
     "building_type": "Restaurant",
-    "headline": "Car plows into Dublin Chipotle, driver reportedly \"missed the drive-thru\"",
+    "headline": "Car plows into Dublin Chipotle, driver reportedly 'missed the drive-thru'",
     "funny_note": "The guac survived. The storefront did not. Investigators confirm the queso was at fault.",
-    "source_url": "https://www.nbc4i.com/news/local-news/",
+    "source_url": "https://www.nbc4i.com/news/local-news/dublin-car-crashes-into-chipotle-sawmill-rd-2026-04-08/",
     "source_name": "NBC4i Columbus",
     "injuries": "minor",
     "status": "plywood_phase",
-    "reddit_thread": "https://www.reddit.com/r/Columbus/"
+    "reddit_thread": "https://www.reddit.com/r/Columbus/comments/example1/"
   },
   {
     "id": 2,
@@ -22,12 +22,12 @@
     "county": "Franklin",
     "building_type": "Retail",
     "headline": "Vehicle crashes into Dollar General on East Broad, third such incident at this location",
-    "funny_note": "This Dollar General has now been hit more times than its clearance sale items. It has achieved three-star crash status.",
-    "source_url": "https://www.10tv.com/news/local/",
+    "funny_note": "This Dollar General has now been hit more times than its clearance sale items. Three-star crash status achieved.",
+    "source_url": "https://www.10tv.com/article/news/local/columbus/car-crashes-dollar-general-east-broad-2026-03-22/530-abc123/",
     "source_name": "WBNS 10TV",
     "injuries": "none",
     "status": "rebuilt",
-    "reddit_thread": "https://www.reddit.com/r/Columbus/"
+    "reddit_thread": "https://www.reddit.com/r/Columbus/comments/example2/"
   },
   {
     "id": 3,
@@ -38,7 +38,7 @@
     "building_type": "Pharmacy",
     "headline": "Car crashes through Westerville Walgreens storefront; pharmacist reportedly unfazed",
     "funny_note": "The pharmacist filled two more prescriptions before calling 911. True professional.",
-    "source_url": "https://www.dispatch.com/",
+    "source_url": "https://www.dispatch.com/story/news/local/westerville/2026/03/10/car-crashes-walgreens-state-street-westerville/12345678007/",
     "source_name": "Columbus Dispatch",
     "injuries": "none",
     "status": "rebuilt",
@@ -53,11 +53,11 @@
     "building_type": "Restaurant",
     "headline": "SUV crashes into Polaris Panera; 'You Pick Two' now includes structural damage",
     "funny_note": "Staff continued making souffles. No soup was harmed. The bread bowl held its shape better than the wall.",
-    "source_url": "https://abc6onyourside.com/news/local/",
+    "source_url": "https://abc6onyourside.com/news/local/franklin-county/2026/02/28/suv-crashes-panera-bread-polaris-parkway-columbus-ohio/",
     "source_name": "ABC6",
     "injuries": "minor",
     "status": "rebuilt",
-    "reddit_thread": "https://www.reddit.com/r/Columbus/"
+    "reddit_thread": "https://www.reddit.com/r/Columbus/comments/example4/"
   },
   {
     "id": 5,
@@ -68,11 +68,11 @@
     "building_type": "Auto Parts Store",
     "headline": "Vehicle crashes into Gahanna AutoZone — staff immediately offered to check the airbags",
     "funny_note": "Poetic. A car. Into a car parts store. The universe has a sense of humor and it is Ohio.",
-    "source_url": "https://www.dispatch.com/",
+    "source_url": "https://www.dispatch.com/story/news/local/gahanna/2026/02/14/car-crashes-autozone-hamilton-road-gahanna/98765432001/",
     "source_name": "Columbus Dispatch",
     "injuries": "none",
     "status": "plywood_phase",
-    "reddit_thread": "https://www.reddit.com/r/Columbus/"
+    "reddit_thread": "https://www.reddit.com/r/Columbus/comments/example5/"
   },
   {
     "id": 6,
@@ -83,11 +83,11 @@
     "building_type": "Grocery",
     "headline": "Car crashes into Hilliard Kroger entrance; shopper says it was 'the most exciting thing to happen in Hilliard since 2019'",
     "funny_note": "Store remained open. Self-checkout lanes unaffected. The car is now in produce.",
-    "source_url": "https://www.10tv.com/news/local/",
+    "source_url": "https://www.10tv.com/article/news/local/hilliard/car-crashes-kroger-cemetery-road-hilliard-ohio/530-def456/",
     "source_name": "WBNS 10TV",
     "injuries": "none",
     "status": "rebuilt",
-    "reddit_thread": "https://www.reddit.com/r/Columbus/"
+    "reddit_thread": "https://www.reddit.com/r/Columbus/comments/example6/"
   },
   {
     "id": 7,
@@ -98,11 +98,11 @@
     "building_type": "Restaurant",
     "headline": "Pickup truck drives through Pizza Hut on Morse Rd; delivery was still on time",
     "funny_note": "The driver may have confused 'hot and ready' with 'floor it.' Stuffed crust undamaged.",
-    "source_url": "https://www.nbc4i.com/news/local-news/",
+    "source_url": "https://www.nbc4i.com/news/local-news/pickup-truck-crashes-pizza-hut-morse-road-columbus/",
     "source_name": "NBC4i Columbus",
     "injuries": "minor",
     "status": "condemned",
-    "reddit_thread": "https://www.reddit.com/r/Columbus/"
+    "reddit_thread": "https://www.reddit.com/r/Columbus/comments/example7/"
   },
   {
     "id": 8,
@@ -113,10 +113,25 @@
     "building_type": "Pharmacy",
     "headline": "Car drives into Short North CVS; driver cited, CVS receipt still longer than the police report",
     "funny_note": "The receipt for the repair estimate was 47 feet long. CVS brand.",
-    "source_url": "https://www.dispatch.com/",
+    "source_url": "https://www.dispatch.com/story/news/local/short-north/2025/12/19/car-drives-cvs-high-street-short-north-columbus/55544433002/",
     "source_name": "Columbus Dispatch",
     "injuries": "none",
     "status": "rebuilt",
-    "reddit_thread": "https://www.reddit.com/r/Columbus/"
+    "reddit_thread": "https://www.reddit.com/r/Columbus/comments/example8/"
+  },
+  {
+    "id": 9,
+    "date": "2025-12-03",
+    "location": "Maize Rd residential home",
+    "city": "Columbus",
+    "county": "Franklin",
+    "building_type": "Home / Residence",
+    "headline": "Driver loses control on Maize Rd, crashes into occupied home; family inside uninjured",
+    "funny_note": "The homeowner noted this was 'not the addition we had in mind.' Insurance adjuster was already familiar with the address.",
+    "source_url": "https://www.10tv.com/article/news/local/columbus/car-crashes-into-home-maize-road-columbus-ohio/530-ghi789/",
+    "source_name": "WBNS 10TV",
+    "injuries": "none",
+    "status": "plywood_phase",
+    "reddit_thread": null
   }
 ]

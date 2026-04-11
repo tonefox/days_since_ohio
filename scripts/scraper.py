@@ -28,11 +28,12 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 log = logging.getLogger(__name__)
 
 # ── Paths ────────────────────────────────────────────────────────────────────
-SCRIPT_DIR     = Path(__file__).parent
-REPO_ROOT      = SCRIPT_DIR.parent
-INCIDENTS_FILE = REPO_ROOT / "incidents.json"
+SCRIPT_DIR      = Path(__file__).parent
+REPO_ROOT       = SCRIPT_DIR.parent
+INCIDENTS_FILE  = REPO_ROOT / "incidents.json"
 CANDIDATES_FILE = SCRIPT_DIR / "candidates.json"
-SEEN_FILE      = SCRIPT_DIR / ".seen_urls.json"
+SEEN_FILE       = SCRIPT_DIR / ".seen_urls.json"
+STATUS_FILE     = REPO_ROOT / "api-status.json"
 
 # ── Keyword filters ───────────────────────────────────────────────────────────
 VEHICLE_TERMS = [
@@ -44,6 +45,8 @@ IMPACT_TERMS = [
     "into building", "into storefront", "through storefront",
     "into store", "into restaurant", "through the wall", "smashed into",
     "slammed into", "barreled into", "careened into",
+    "into home", "into house", "into residence", "into garage",
+    "through the front", "through a home", "through a house",
 ]
 OHIO_LOCATIONS = [
     "Columbus", "Dublin", "Westerville", "Gahanna", "Hilliard",
@@ -127,13 +130,16 @@ def make_candidate(title: str, url: str, source_name: str, pub_date=None) -> dic
     }
 
 # ── Source: Google News RSS ───────────────────────────────────────────────────
-def fetch_google_news(seen_hashes: set) -> list[dict]:
+def fetch_google_news(seen_hashes: set) -> tuple[list[dict], dict]:
     candidates = []
+    total_checked = 0
+    last_error = None
     for query in GNEWS_QUERIES:
         url = GNEWS_BASE.format(q=requests.utils.quote(query))
         log.info(f"[Google News] {query}")
         try:
             feed = feedparser.parse(url)
+            total_checked += len(feed.entries)
             for entry in feed.entries:
                 link  = entry.get("link", "")
                 title = entry.get("title", "")
@@ -151,18 +157,39 @@ def fetch_google_news(seen_hashes: set) -> list[dict]:
                 seen_hashes.add(h)
                 log.info(f"  ✓ {title[:80]}")
         except Exception as e:
+            last_error = str(e)
             log.warning(f"  Google News error: {e}")
-    return candidates
+
+    status = {
+        "label":        "Google News RSS",
+        "requires_setup": False,
+        "status":       "error" if last_error and not candidates else "ok",
+        "note":         last_error or f"No auth required. {total_checked} articles scanned.",
+        "new_candidates": len(candidates),
+        "last_checked": datetime.now(timezone.utc).isoformat(),
+    }
+    return candidates, status
 
 # ── Source: Reddit ────────────────────────────────────────────────────────────
-def fetch_reddit(seen_hashes: set) -> list[dict]:
+def fetch_reddit(seen_hashes: set) -> tuple[list[dict], dict]:
     client_id     = os.environ.get("REDDIT_CLIENT_ID", "")
     client_secret = os.environ.get("REDDIT_CLIENT_SECRET", "")
+
     if not client_id or not client_secret:
         log.warning("[Reddit] Skipping — REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET not set")
-        return []
+        status = {
+            "label":          "Reddit API (PRAW)",
+            "requires_setup": True,
+            "status":         "not_configured",
+            "note":           "Add REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET to GitHub Secrets. Free at reddit.com/prefs/apps.",
+            "setup_url":      "https://www.reddit.com/prefs/apps",
+            "new_candidates": 0,
+            "last_checked":   datetime.now(timezone.utc).isoformat(),
+        }
+        return [], status
 
     candidates = []
+    last_error = None
     try:
         reddit = praw.Reddit(
             client_id=client_id,
@@ -188,19 +215,32 @@ def fetch_reddit(seen_hashes: set) -> list[dict]:
                 seen_hashes.add(h)
                 log.info(f"  ✓ {title[:80]}")
     except Exception as e:
+        last_error = str(e)
         log.warning(f"[Reddit] Error: {e}")
-    return candidates
+
+    status = {
+        "label":          "Reddit API (PRAW)",
+        "requires_setup": True,
+        "status":         "error" if last_error else "ok",
+        "note":           last_error or f"Monitoring: {', '.join('r/'+s for s in REDDIT_SUBREDDITS)}",
+        "new_candidates": len(candidates),
+        "last_checked":   datetime.now(timezone.utc).isoformat(),
+    }
+    return candidates, status
 
 # ── Source: Columbus PD / Fire ────────────────────────────────────────────────
-def fetch_public_safety(seen_hashes: set) -> list[dict]:
+def fetch_public_safety(seen_hashes: set) -> tuple[list[dict], dict]:
     candidates = []
+    source_statuses = []
     headers = {"User-Agent": "OhioCrashBot/1.0 (dayssinceohiocrash.com)"}
+
     for source in PUBLIC_SAFETY_SOURCES:
         log.info(f"[Public Safety] {source['name']}")
         try:
             resp = requests.get(source["url"], headers=headers, timeout=15)
             resp.raise_for_status()
             soup = BeautifulSoup(resp.text, "html.parser")
+            found = 0
             for tag in soup.select(source["selector"]):
                 text = tag.get_text(strip=True)
                 href = tag.get("href", "")
@@ -216,10 +256,24 @@ def fetch_public_safety(seen_hashes: set) -> list[dict]:
                     continue
                 candidates.append(make_candidate(text, href, source["name"]))
                 seen_hashes.add(h)
+                found += 1
                 log.info(f"  ✓ {text[:80]}")
+            source_statuses.append({"name": source["name"], "status": "ok", "found": found})
         except Exception as e:
             log.warning(f"  Error scraping {source['name']}: {e}")
-    return candidates
+            source_statuses.append({"name": source["name"], "status": "error", "error": str(e)})
+
+    overall = "ok" if all(s["status"] == "ok" for s in source_statuses) else "partial"
+    status = {
+        "label":          "Columbus PD / Fire (public pages)",
+        "requires_setup": False,
+        "status":         overall,
+        "note":           "No auth required. Scrapes public press release pages.",
+        "sources":        source_statuses,
+        "new_candidates": len(candidates),
+        "last_checked":   datetime.now(timezone.utc).isoformat(),
+    }
+    return candidates, status
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
@@ -233,9 +287,19 @@ def main():
 
     # Fetch from all sources
     new_candidates = []
-    new_candidates.extend(fetch_google_news(seen_hashes))
-    new_candidates.extend(fetch_reddit(seen_hashes))
-    new_candidates.extend(fetch_public_safety(seen_hashes))
+    source_statuses = []
+
+    gnews_results, gnews_status = fetch_google_news(seen_hashes)
+    new_candidates.extend(gnews_results)
+    source_statuses.append(gnews_status)
+
+    reddit_results, reddit_status = fetch_reddit(seen_hashes)
+    new_candidates.extend(reddit_results)
+    source_statuses.append(reddit_status)
+
+    safety_results, safety_status = fetch_public_safety(seen_hashes)
+    new_candidates.extend(safety_results)
+    source_statuses.append(safety_status)
 
     # Merge with existing candidates (don't overwrite what's pending review)
     existing = load_json(CANDIDATES_FILE, [])
@@ -247,6 +311,15 @@ def main():
 
     # Persist updated seen hashes
     save_json(SEEN_FILE, list(seen_hashes))
+
+    # Write api-status.json so admin.html can display live source health
+    api_status = {
+        "last_run":   datetime.now(timezone.utc).isoformat(),
+        "new_total":  len(truly_new),
+        "sources":    source_statuses,
+    }
+    save_json(STATUS_FILE, api_status)
+    log.info(f"✓ api-status.json updated.")
 
     log.info(f"\nDone. {len(truly_new)} new candidate(s) added. {len(merged)} total pending review.")
     log.info(f"Edit {CANDIDATES_FILE} to review, then move approved items to {INCIDENTS_FILE}.")
