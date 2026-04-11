@@ -1,0 +1,29 @@
+[build]
+  publish = "."    # static site, root is the publish dir
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options        = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy        = "strict-origin-when-cross-origin"
+    Permissions-Policy     = "geolocation=(), camera=(), microphone=()"
+
+[[headers]]
+  for = "/incidents.json"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+# Pretty URLs — /about instead of /about.html
+[[redirects]]
+  from   = "/about"
+  to     = "/about.html"
+  status = 200
+
+# Netlify Forms processor (tip submissions)
+# No extra config needed — form has data-netlify="true"

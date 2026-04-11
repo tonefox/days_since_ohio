@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Days Since Ohio Crash | dayssinceohiocrash.com</title>
+  <meta name="description" content="Tracking every incident where a car has driven into a building in the Columbus, Ohio metro area. Sourced from local news, Reddit, and public records." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Days Since Ohio Crash" />
+  <meta property="og:description" content="Tracking every Columbus, Ohio car-vs-building incident so you don't have to." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dayssinceohiocrash.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="apple-touch-icon" href="/icon-192.png" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+          },
+          animation: {
+            'count-in': 'countIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
+            'pulse-slow': 'pulse 3s ease-in-out infinite',
+            'shake': 'shake 0.5s ease-in-out',
+          },
+          keyframes: {
+            countIn: {
+              '0%': { transform: 'scale(0.5)', opacity: '0' },
+              '100%': { transform: 'scale(1)', opacity: '1' },
+            },
+            shake: {
+              '0%, 100%': { transform: 'translateX(0)' },
+              '20%': { transform: 'translateX(-6px)' },
+              '40%': { transform: 'translateX(6px)' },
+              '60%': { transform: 'translateX(-4px)' },
+              '80%': { transform: 'translateX(4px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Counter digit box */
+    .counter-digit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1ch;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border: 2px solid #334155;
+      border-radius: 12px;
+      padding: 0.1em 0.3em;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+    .counter-zero .counter-digit {
+      border-color: #dc2626;
+      box-shadow: 0 0 32px rgba(220, 38, 38, 0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+      animation: shake 0.5s ease-in-out;
+    }
+    /* Status badge colors */
+    .badge-rebuilt     { background: #14532d; color: #86efac; }
+    .badge-plywood     { background: #713f12; color: #fde68a; }
+    .badge-condemned   { background: #450a0a; color: #fca5a5; }
+
+    /* Incident card hover */
+    .incident-card:hover { border-color: #475569; }
+
+    /* Streak bar */
+    .streak-bar { background: linear-gradient(90deg, #dc2626, #f97316, #eab308); }
+
+    /* Filter button active */
+    .filter-btn.active { background: #1d4ed8; color: #fff; border-color: #1d4ed8; }
+
+    /* Share animation */
+    @keyframes copied {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+    .share-copied { animation: copied 0.3s ease; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🚗💥</span>
+        <div>
+          <div class="font-bold text-white text-sm leading-none">Days Since Ohio Crash</div>
+          <div class="text-slate-500 text-xs">Columbus metro · satire · sourced</div>
+        </div>
+      </div>
+      <nav class="flex items-center gap-4 text-sm">
+        <a href="/about.html" class="text-slate-400 hover:text-white transition-colors">About</a>
+        <a href="/feed.xml" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1">
+          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/></svg>
+          RSS
+        </a>
+        <span class="bg-amber-500/20 text-amber-400 text-xs px-2 py-0.5 rounded-full font-medium">SATIRE</span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-8">
+
+    <!-- HERO: Days Since Counter -->
+    <section id="hero" class="text-center mb-12">
+      <p class="text-slate-400 text-sm uppercase tracking-widest mb-4 font-medium">Columbus Metro Area</p>
+
+      <p class="text-slate-300 text-lg mb-3">It has been</p>
+
+      <div id="counter-display" class="flex items-center justify-center gap-2 mb-3">
+        <span class="text-8xl font-black text-white tracking-tight" id="counter-number" style="font-variant-numeric: tabular-nums;">
+          <span class="counter-digit">–</span>
+        </span>
+      </div>
+
+      <p class="text-slate-300 text-xl font-medium mb-1">
+        day<span id="plural">s</span> since a car drove into a building
+      </p>
+      <p class="text-slate-500 text-base mb-8">in the Columbus, Ohio metro area</p>
+
+      <!-- Score bar -->
+      <div class="inline-flex items-center gap-0 rounded-xl overflow-hidden border border-slate-700 text-sm font-bold mb-8">
+        <div class="bg-slate-800 px-6 py-3 text-slate-400">
+          🚗 Ohio
+          <span class="text-white text-lg ml-2" id="score-ohio">0</span>
+        </div>
+        <div class="bg-slate-900 px-3 py-3 text-slate-600 text-xs font-normal">vs</div>
+        <div class="bg-slate-800 px-6 py-3 text-slate-400">
+          <span class="text-green-400 text-lg mr-2" id="score-buildings">0</span>
+          🏢 Buildings
+        </div>
+      </div>
+
+      <!-- Stats bar -->
+      <div id="stats-bar" class="flex flex-wrap justify-center gap-6 text-center mb-8">
+        <div>
+          <div class="text-2xl font-bold text-white" id="stat-total">–</div>
+          <div class="text-slate-500 text-xs uppercase tracking-wide">Total Incidents</div>
+        </div>
+        <div class="w-px bg-slate-800"></div>
+        <div>
+          <div class="text-2xl font-bold text-white" id="stat-streak">–</div>
+          <div class="text-slate-500 text-xs uppercase tracking-wide">Record Streak (days)</div>
+        </div>
+        <div class="w-px bg-slate-800"></div>
+        <div>
+          <div class="text-2xl font-bold text-white" id="stat-top-type">–</div>
+          <div class="text-slate-500 text-xs uppercase tracking-wide">Most Hit Type</div>
+        </div>
+        <div class="w-px bg-slate-800"></div>
+        <div>
+          <div class="text-2xl font-bold text-white" id="stat-year">–</div>
+          <div class="text-slate-500 text-xs uppercase tracking-wide">This Year</div>
+        </div>
+      </div>
+
+      <!-- Share button -->
+      <button id="share-btn" onclick="shareCounter()"
+        class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 hover:text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+        </svg>
+        <span id="share-label">Share the Counter</span>
+      </button>
+    </section>
+
+    <!-- Building Type Leaderboard -->
+    <section class="mb-10">
+      <h2 class="text-slate-400 text-xs uppercase tracking-widest font-medium mb-4">Most Endangered Building Types</h2>
+      <div id="leaderboard" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="border-t border-slate-800 mb-8"></div>
+
+    <!-- Incident Feed -->
+    <section>
+      <div class="flex items-center justify-between mb-5 flex-wrap gap-3">
+        <h2 class="text-slate-200 font-semibold text-lg">Incident Log</h2>
+        <!-- Filters -->
+        <div class="flex flex-wrap gap-2 text-xs" id="filter-bar">
+          <button class="filter-btn active px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="all">All</button>
+          <button class="filter-btn px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="Restaurant">Restaurants</button>
+          <button class="filter-btn px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="Retail">Retail</button>
+          <button class="filter-btn px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="Pharmacy">Pharmacy</button>
+          <button class="filter-btn px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800 text-slate-300 hover:text-white transition-all" data-filter="Grocery">Grocery</button>
+        </div>
+      </div>
+
+      <div id="incident-feed" class="space-y-4">
+        <!-- Populated by JS -->
+        <div class="text-center text-slate-600 py-12">Loading incidents...</div>
+      </div>
+    </section>
+
+    <!-- Submit a tip -->
+    <section class="mt-12 border border-slate-800 rounded-2xl p-6 bg-slate-900/50 text-center">
+      <div class="text-2xl mb-2">📡</div>
+      <h3 class="font-semibold text-white mb-1">Know about an incident we missed?</h3>
+      <p class="text-slate-400 text-sm mb-4">Submit a tip with a source link and we'll review it. Ohio incidents only. Cars must actually drive through buildings.</p>
+      <a href="/about.html#submit" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-colors">
+        Submit a Tip
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 mt-16 py-8">
+    <div class="max-w-4xl mx-auto px-4 text-center text-slate-600 text-xs space-y-2">
+      <p>
+        <span class="bg-amber-500/20 text-amber-500 px-2 py-0.5 rounded font-medium">SATIRE</span>
+        — This site is satirical. All incidents are real and sourced from public reporting.
+        No personal information about drivers is published.
+      </p>
+      <p>Sources: Columbus Dispatch · NBC4i · WBNS 10TV · ABC6 · Reddit r/Columbus · Columbus Division of Police</p>
+      <p class="mt-4">
+        <a href="/about.html" class="hover:text-slate-400 transition-colors">About & Methodology</a>
+        &nbsp;·&nbsp;
+        <a href="/feed.xml" class="hover:text-slate-400 transition-colors">RSS Feed</a>
+        &nbsp;·&nbsp;
+        <a href="/about.html#submit" class="hover:text-slate-400 transition-colors">Submit a Tip</a>
+      </p>
+      <p class="text-slate-700 mt-2">dayssinceohiocrash.com · Not affiliated with the city of Columbus or any insurance company (yet)</p>
+    </div>
+  </footer>
+
+  <script>
+    // ─── Data ────────────────────────────────────────────────────────────────
+    let allIncidents = [];
+    let activeFilter = 'all';
+
+    // ─── Helpers ─────────────────────────────────────────────────────────────
+    function daysSince(dateStr) {
+      const d = new Date(dateStr + 'T00:00:00');
+      return Math.floor((Date.now() - d.getTime()) / 86_400_000);
+    }
+
+    function formatDate(dateStr) {
+      return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
+        month: 'short', day: 'numeric', year: 'numeric'
+      });
+    }
+
+    function buildingStatus(s) {
+      const map = {
+        rebuilt:      { label: '🟢 Rebuilt',       cls: 'badge-rebuilt' },
+        plywood_phase:{ label: '🟡 Plywood Phase',  cls: 'badge-plywood' },
+        condemned:    { label: '🔴 Condemned',      cls: 'badge-condemned' },
+      };
+      return map[s] || { label: '⬜ Unknown', cls: '' };
+    }
+
+    // ─── Counter ─────────────────────────────────────────────────────────────
+    function renderCounter(days) {
+      const el    = document.getElementById('counter-number');
+      const plural = document.getElementById('plural');
+      const wrap  = document.getElementById('counter-display');
+
+      plural.textContent = days === 1 ? '' : 's';
+
+      // Split digits for styled boxes
+      const digits = String(days).split('');
+      el.innerHTML = digits.map(d =>
+        `<span class="counter-digit">${d}</span>`
+      ).join('');
+
+      if (days === 0) {
+        wrap.classList.add('counter-zero');
+        el.classList.add('text-red-500');
+        document.title = '🚨 0 DAYS — Ohio Crash Watch';
+      } else {
+        wrap.classList.remove('counter-zero');
+        el.classList.remove('text-red-500');
+        document.title = `${days} Day${days === 1 ? '' : 's'} Since Ohio Crash`;
+      }
+    }
+
+    // ─── Leaderboard ─────────────────────────────────────────────────────────
+    function renderLeaderboard(incidents) {
+      const counts = {};
+      incidents.forEach(i => {
+        counts[i.building_type] = (counts[i.building_type] || 0) + 1;
+      });
+      const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 4);
+      const emojis = { Restaurant: '🍔', Retail: '🛍️', Pharmacy: '💊', Grocery: '🛒', 'Auto Parts Store': '🔧' };
+
+      document.getElementById('leaderboard').innerHTML = sorted.map(([type, count]) => `
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+          <div class="text-2xl mb-1">${emojis[type] || '🏢'}</div>
+          <div class="text-xl font-bold text-white">${count}</div>
+          <div class="text-slate-500 text-xs">${type}</div>
+        </div>
+      `).join('');
+    }
+
+    // ─── Stats Bar ───────────────────────────────────────────────────────────
+    function renderStats(incidents) {
+      const thisYear = new Date().getFullYear();
+      const yearCount = incidents.filter(i => i.date.startsWith(thisYear)).length;
+
+      // Calculate longest streak (gaps between incidents, sorted by date)
+      const dates = incidents.map(i => new Date(i.date + 'T00:00:00')).sort((a, b) => a - b);
+      let maxGap = 0;
+      for (let i = 1; i < dates.length; i++) {
+        const gap = Math.floor((dates[i] - dates[i-1]) / 86_400_000);
+        if (gap > maxGap) maxGap = gap;
+      }
+
+      const counts = {};
+      incidents.forEach(i => { counts[i.building_type] = (counts[i.building_type] || 0) + 1; });
+      const topType = Object.entries(counts).sort((a, b) => b[1] - a[1])[0]?.[0] || '–';
+
+      document.getElementById('stat-total').textContent  = incidents.length;
+      document.getElementById('stat-streak').textContent = maxGap || '–';
+      document.getElementById('stat-top-type').textContent = topType;
+      document.getElementById('stat-year').textContent   = yearCount;
+      document.getElementById('score-ohio').textContent  = 0;
+      document.getElementById('score-buildings').textContent = incidents.length;
+    }
+
+    // ─── Incident Card ────────────────────────────────────────────────────────
+    function renderCard(incident) {
+      const days  = daysSince(incident.date);
+      const st    = buildingStatus(incident.status);
+      return `
+        <article class="incident-card bg-slate-900 border border-slate-800 rounded-2xl p-5 transition-colors"
+                 data-type="${incident.building_type}">
+          <div class="flex items-start justify-between gap-4 flex-wrap">
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 flex-wrap mb-2">
+                <span class="text-slate-400 text-xs font-mono">#${String(incident.id).padStart(3,'0')}</span>
+                <span class="text-slate-600 text-xs">·</span>
+                <span class="text-slate-400 text-xs">${formatDate(incident.date)}</span>
+                <span class="text-slate-600 text-xs">·</span>
+                <span class="text-slate-400 text-xs">${incident.city}, ${incident.county} Co.</span>
+                <span class="${st.cls} text-xs px-2 py-0.5 rounded-full font-medium">${st.label}</span>
+              </div>
+              <h3 class="text-white font-semibold text-base leading-snug mb-2">${incident.headline}</h3>
+              ${incident.funny_note ? `<p class="text-slate-400 text-sm italic mb-3">"${incident.funny_note}"</p>` : ''}
+              <div class="flex items-center gap-3 flex-wrap text-xs">
+                <a href="${incident.source_url}" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-blue-400 hover:text-blue-300 transition-colors font-medium">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                  ${incident.source_name}
+                </a>
+                ${incident.reddit_thread ? `
+                <a href="${incident.reddit_thread}" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-1.5 text-orange-400 hover:text-orange-300 transition-colors">
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                  r/Columbus
+                </a>` : ''}
+                <span class="text-slate-600 bg-slate-800 px-2 py-0.5 rounded">${incident.building_type}</span>
+              </div>
+            </div>
+            <div class="text-right shrink-0">
+              <div class="text-slate-600 text-xs">${days}d ago</div>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    // ─── Feed rendering ───────────────────────────────────────────────────────
+    function renderFeed() {
+      const filtered = activeFilter === 'all'
+        ? allIncidents
+        : allIncidents.filter(i => i.building_type === activeFilter);
+
+      const feed = document.getElementById('incident-feed');
+      if (filtered.length === 0) {
+        feed.innerHTML = `<div class="text-center text-slate-600 py-12">No incidents match this filter.</div>`;
+        return;
+      }
+      feed.innerHTML = filtered.map(renderCard).join('');
+    }
+
+    // ─── Share ────────────────────────────────────────────────────────────────
+    async function shareCounter() {
+      const days  = daysSince(allIncidents[0]?.date || new Date().toISOString().slice(0, 10));
+      const text  = `It has been ${days} day${days === 1 ? '' : 's'} since a car drove into a building in the Columbus, Ohio area 🚗💥\ndayssinceohiocrash.com`;
+      const btn   = document.getElementById('share-btn');
+      const label = document.getElementById('share-label');
+
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: 'Days Since Ohio Crash', text, url: 'https://dayssinceohiocrash.com' });
+          return;
+        } catch (_) {}
+      }
+      // Fallback: copy to clipboard
+      await navigator.clipboard.writeText(text + '\nhttps://dayssinceohiocrash.com');
+      label.textContent = 'Copied!';
+      btn.classList.add('share-copied');
+      setTimeout(() => {
+        label.textContent = 'Share the Counter';
+        btn.classList.remove('share-copied');
+      }, 2000);
+    }
+
+    // ─── Filters ──────────────────────────────────────────────────────────────
+    document.getElementById('filter-bar').addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      renderFeed();
+    });
+
+    // ─── Boot ─────────────────────────────────────────────────────────────────
+    async function init() {
+      try {
+        const res  = await fetch('/incidents.json');
+        const data = await res.json();
+        // Sort by date desc
+        allIncidents = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        const days = daysSince(allIncidents[0].date);
+        renderCounter(days);
+        renderStats(allIncidents);
+        renderLeaderboard(allIncidents);
+        renderFeed();
+      } catch (err) {
+        document.getElementById('incident-feed').innerHTML =
+          `<div class="text-center text-slate-600 py-12">Failed to load incidents. Check back soon.</div>`;
+        console.error(err);
+      }
+    }
+
+    init();
+
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>

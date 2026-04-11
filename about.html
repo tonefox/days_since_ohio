@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Days Since Ohio Crash</title>
+  <meta name="description" content="About the Days Since Ohio Crash tracker — methodology, sources, satire notice, and how to submit a tip." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { sans: ['-apple-system','BlinkMacSystemFont','Segoe UI','sans-serif'] } } }
+    }
+  </script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-3xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <span class="text-2xl">🚗💥</span>
+        <div>
+          <div class="font-bold text-white text-sm leading-none">Days Since Ohio Crash</div>
+          <div class="text-slate-500 text-xs">Columbus metro · satire · sourced</div>
+        </div>
+      </a>
+      <span class="bg-amber-500/20 text-amber-400 text-xs px-2 py-0.5 rounded-full font-medium">SATIRE</span>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-4 py-12 space-y-12">
+
+    <!-- Satire notice (prominent) -->
+    <div class="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-6">
+      <div class="flex gap-3">
+        <span class="text-2xl">⚠️</span>
+        <div>
+          <h2 class="text-amber-400 font-semibold text-lg mb-2">This is a Satire Site</h2>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Days Since Ohio Crash is a satirical, comedic website. Every incident listed is real and sourced from public reporting — we do not fabricate events. The humor comes from the <em>volume</em> and <em>frequency</em> of real incidents, not from mocking victims. We do not publish the names, photos, or personal information of drivers or anyone else involved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- What is this -->
+    <section>
+      <h2 class="text-white font-bold text-2xl mb-4">What is this?</h2>
+      <div class="text-slate-300 text-sm leading-relaxed space-y-3">
+        <p>
+          A statistically baffling number of cars drive into buildings in the Columbus, Ohio metro area. This site exists to document that phenomenon with sources, a running counter, and as much dry humor as the situation warrants.
+        </p>
+        <p>
+          The "Days Since Last Incident" counter is the heart of it. It resets to zero every time a new verified incident is added. The goal is to see how high we can get it — spoiler: not very.
+        </p>
+        <p>
+          We track incidents in Franklin County and surrounding Columbus metro communities (Dublin, Westerville, Gahanna, Hilliard, Grove City, Reynoldsburg, Pickerington, Worthington, Bexley, Upper Arlington, New Albany, Groveport, etc.).
+        </p>
+      </div>
+    </section>
+
+    <!-- Methodology -->
+    <section>
+      <h2 class="text-white font-bold text-2xl mb-4">Methodology</h2>
+      <div class="text-slate-300 text-sm leading-relaxed space-y-3">
+        <p>We monitor the following sources daily via an automated script, with human review before anything is published:</p>
+        <ul class="space-y-2 mt-3">
+          <li class="flex gap-3">
+            <span class="text-blue-400 font-medium w-36 shrink-0">Google News RSS</span>
+            <span>Keyword searches across all local Columbus news outlets — Columbus Dispatch, NBC4i, WBNS 10TV, ABC6, Columbus Underground, and more.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-orange-400 font-medium w-36 shrink-0">Reddit</span>
+            <span>r/Columbus, r/Ohio, and r/columbusoh monitored for posts describing car-into-building incidents.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-slate-400 font-medium w-36 shrink-0">Columbus PD/Fire</span>
+            <span>Public press releases from the Columbus Division of Police and Columbus Fire/EMS are scraped for relevant incidents.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-green-400 font-medium w-36 shrink-0">Public Tips</span>
+            <span>Anyone can submit a tip via the form below. Tips require a source link and are reviewed before publishing.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Inclusion criteria -->
+    <section>
+      <h2 class="text-white font-bold text-2xl mb-4">Inclusion Criteria</h2>
+      <div class="text-slate-300 text-sm leading-relaxed space-y-3">
+        <p>An incident is added to the log only if <strong class="text-white">all</strong> of the following are true:</p>
+        <ol class="list-decimal list-inside space-y-2 mt-3 ml-2">
+          <li>A motor vehicle physically drove into, crashed through, or made contact with a building structure.</li>
+          <li>The incident occurred in the Columbus, Ohio metro area (Franklin County + adjacent municipalities).</li>
+          <li>The incident is reported by a credible public source (local news outlet, police/fire press release, or verified social media with corroborating source).</li>
+          <li>The incident is not a known duplicate of an already-listed entry.</li>
+        </ol>
+        <p class="mt-3 text-slate-500">
+          We do not include: pedestrian collisions, vehicle collisions with other vehicles, incidents outside the metro area, or unverified social media claims.
+        </p>
+      </div>
+    </section>
+
+    <!-- What we don't publish -->
+    <section>
+      <h2 class="text-white font-bold text-2xl mb-4">What We Don't Publish</h2>
+      <ul class="text-slate-300 text-sm space-y-2">
+        <li class="flex gap-2"><span class="text-red-400">✗</span> Names of drivers, pedestrians, or anyone involved</li>
+        <li class="flex gap-2"><span class="text-red-400">✗</span> Photos of victims or bystanders</li>
+        <li class="flex gap-2"><span class="text-red-400">✗</span> License plates or other identifying vehicle information</li>
+        <li class="flex gap-2"><span class="text-red-400">✗</span> Speculation about cause, fault, or legal outcomes</li>
+        <li class="flex gap-2"><span class="text-red-400">✗</span> Unverified or unconfirmed incidents</li>
+      </ul>
+    </section>
+
+    <!-- Submit a tip -->
+    <section id="submit">
+      <h2 class="text-white font-bold text-2xl mb-4">Submit a Tip</h2>
+      <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+        Know about an incident we missed? Submit it below. Include a link to a credible source (local news, police report, etc.). Ohio incidents only. Tips are reviewed before publishing — typically within 24 hours.
+      </p>
+
+      <!-- Netlify form (works with Netlify hosting out of the box) -->
+      <form name="tip-submission" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+            class="space-y-4 bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <input type="hidden" name="form-name" value="tip-submission" />
+        <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+        <div>
+          <label class="block text-slate-300 text-sm font-medium mb-1.5">Date of Incident</label>
+          <input type="date" name="incident_date" required
+            class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2.5 text-slate-100 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
+        </div>
+
+        <div>
+          <label class="block text-slate-300 text-sm font-medium mb-1.5">Location</label>
+          <input type="text" name="location" placeholder="e.g. Sawmill Rd Chipotle, Dublin OH" required
+            class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2.5 text-slate-100 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
+        </div>
+
+        <div>
+          <label class="block text-slate-300 text-sm font-medium mb-1.5">Source URL <span class="text-slate-500 font-normal">(required — news article, police report, etc.)</span></label>
+          <input type="url" name="source_url" placeholder="https://..." required
+            class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2.5 text-slate-100 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" />
+        </div>
+
+        <div>
+          <label class="block text-slate-300 text-sm font-medium mb-1.5">Additional Notes <span class="text-slate-500 font-normal">(optional)</span></label>
+          <textarea name="notes" rows="3" placeholder="Anything else we should know..."
+            class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2.5 text-slate-100 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 resize-none"></textarea>
+        </div>
+
+        <button type="submit"
+          class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-colors">
+          Submit Tip
+        </button>
+      </form>
+    </section>
+
+    <!-- Contact -->
+    <section>
+      <h2 class="text-white font-bold text-2xl mb-4">Contact</h2>
+      <p class="text-slate-300 text-sm leading-relaxed">
+        For press inquiries, corrections, or takedown requests, contact us via the tip form above and mention your reason in the notes field. We respond to all correction requests promptly and take accuracy seriously — satirical or not.
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-800 mt-16 py-8">
+    <div class="max-w-3xl mx-auto px-4 text-center text-slate-600 text-xs space-y-2">
+      <p>
+        <span class="bg-amber-500/20 text-amber-500 px-2 py-0.5 rounded font-medium">SATIRE</span>
+        — This site is satirical. All incidents are real and sourced.
+      </p>
+      <p><a href="/" class="hover:text-slate-400 transition-colors">← Back to the counter</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
