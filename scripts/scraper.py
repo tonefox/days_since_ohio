@@ -53,25 +53,60 @@ IMPACT_TERMS = [
     "through the front", "through a home", "through a house",
 ]
 OHIO_LOCATIONS = [
+    # Columbus metro
     "Columbus", "Dublin", "Westerville", "Gahanna", "Hilliard",
     "Grove City", "Reynoldsburg", "Pickerington", "Worthington",
     "Bexley", "Upper Arlington", "New Albany", "Groveport",
-    "Delaware", "Newark", "Lancaster", "Pataskala", "Obetz", "Ohio",
+    "Delaware", "Newark", "Lancaster", "Pataskala", "Obetz",
+    # Cleveland metro
+    "Cleveland", "Parma", "Lakewood", "Euclid", "Strongsville",
+    "Mentor", "Lorain", "Elyria", "Medina",
+    # Cincinnati metro
+    "Cincinnati", "Hamilton", "Middletown", "Fairfield", "Mason",
+    "Florence", "Covington", "Newport",
+    # Dayton metro
+    "Dayton", "Kettering", "Beavercreek", "Huber Heights", "Fairborn",
+    "Springfield", "Troy", "Miamisburg",
+    # Toledo metro
+    "Toledo", "Maumee", "Perrysburg", "Sylvania", "Findlay",
+    # Akron / Canton metro
+    "Akron", "Canton", "Massillon", "Green", "Barberton",
+    # Other major cities
+    "Youngstown", "Warren", "Lima", "Mansfield",
+    # Counties
     "Franklin County", "Delaware County", "Licking County", "Fairfield County",
+    "Cuyahoga County", "Hamilton County", "Montgomery County", "Lucas County",
+    "Summit County", "Stark County",
+    # Generic
+    "Ohio",
 ]
 
 # ── Google News RSS queries ───────────────────────────────────────────────────
 GNEWS_QUERIES = [
+    # Columbus
     "car crashed into building Columbus Ohio",
     "vehicle drove into storefront Ohio",
     "car plowed into building Columbus",
     "car through wall Ohio",
     "vehicle into store Columbus Ohio",
+    # Major Ohio cities
+    "car crashed into building Cleveland Ohio",
+    "car crashed into building Cincinnati Ohio",
+    "car crashed into building Dayton Ohio",
+    "car crashed into building Toledo Ohio",
+    "car crashed into building Akron Ohio",
 ]
 GNEWS_BASE = "https://news.google.com/rss/search?q={q}&hl=en-US&gl=US&ceid=US:en"
 
 # ── Reddit config ─────────────────────────────────────────────────────────────
-REDDIT_SUBREDDITS = ["Columbus", "Ohio", "columbusoh"]
+REDDIT_SUBREDDITS = [
+    # Columbus metro
+    "Columbus", "columbusoh",
+    # Statewide
+    "Ohio",
+    # Major cities
+    "Cleveland", "Cincinnati", "Dayton", "Toledo", "Akron", "Youngstown", "Canton",
+]
 REDDIT_SEARCH_QUERY = (
     '"drove into" OR "crashed into" OR "plowed into" OR "through wall" '
     'OR "into building" OR "into storefront" building'
