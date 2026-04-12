@@ -46,6 +46,7 @@ jobs:
             COUNT=$(python -c "import json; data=json.load(open('scripts/candidates.json')); print(len(data))")
             echo "changed=true" >> $GITHUB_OUTPUT
             echo "count=$COUNT" >> $GITHUB_OUTPUT
+            echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
           fi
 
       - name: Create pull request with candidates
@@ -53,10 +54,10 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: scraper found ${{ steps.check.outputs.count }} candidate(s) — $(date +'%Y-%m-%d')"
+          commit-message: "chore: scraper found ${{ steps.check.outputs.count }} candidate(s) — ${{ steps.check.outputs.date }}"
           branch: scraper/candidates-${{ github.run_id }}
           delete-branch: true
-          title: "🚗💥 ${{ steps.check.outputs.count }} new candidate incident(s) — $(date +'%Y-%m-%d')"
+          title: "🚗💥 ${{ steps.check.outputs.count }} new candidate incident(s) — ${{ steps.check.outputs.date }}"
           body: |
             The daily scraper found **${{ steps.check.outputs.count }}** candidate incident(s) from Google News, Reddit, and Columbus PD/Fire sources.
 
