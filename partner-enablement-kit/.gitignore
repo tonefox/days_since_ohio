@@ -1,0 +1,7 @@
+# Generated branded output from customize.py
+dist/
+build/
+
+# Python
+__pycache__/
+*.pyc

@@ -1,0 +1,50 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Constitutional Enablement Kit — Brand configuration
+#
+# This is the ONLY file most organizations need to edit. Fill it in, then run:
+#
+#     python3 customize.py
+#
+# to generate a branded copy of the entire kit in ./dist/. The source files in
+# the kit stay untouched, so you can keep pulling upstream constitution updates
+# and simply re-run this script to re-apply your branding (see CONTRIBUTING.md).
+#
+# Format: a small, flat YAML subset (key: value, simple lists, and one-level
+# maps). No external libraries are required — customize.py parses it directly.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# The name of the framework as it should appear in your materials. Most
+# organizations keep "Constitutional Enablement"; rename only if you must.
+framework_name: Constitutional Enablement
+
+# Your organization — the one adopting and running the kit (this fills {{ORG_NAME}}).
+org_name: Your Organization
+
+# The accelerating partner who introduced the kit to you, if any. Leave as-is
+# or set to your own name if you are the accelerator (this fills {{ACCELERATOR_NAME}}).
+accelerator_name: The Accelerating Partner
+
+# Brand presentation. Colors are hex; logo_path is relative to this file.
+# These appear in the branded header customize.py injects into each document.
+accent_color: "#1F4E79"
+secondary_color: "#2E2E2E"
+logo_path: assets/logo.png
+
+# A short note on tone/voice for anyone authoring or adapting content.
+voice: Professional, executive-credible, concise. No humor.
+
+# Contact / footer line stamped at the bottom of branded documents.
+footer: "© Your Organization — Partner Enablement"
+
+# Representative product or solution examples to ground scenarios. These are
+# referenced by authors and (optionally) by the {{PRODUCT_EXAMPLE}} token.
+product_examples:
+  - Your flagship product
+  - Your platform or service
+
+# Whole-word term swaps applied throughout the branded copy. Use these to match
+# your organization's vocabulary. Left = term in the kit, right = your term.
+# Example: change "partner" to "reseller", or "field" to "sales team".
+term_swaps:
+  partner: partner
+  field: field
