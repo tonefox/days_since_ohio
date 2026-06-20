@@ -8,6 +8,10 @@ venv/
 # Scraper internals — candidates are committed for review, but seen-URL cache is not
 scripts/.seen_urls.json
 
+# Build artifacts — regenerable from career-operating-system/
+career-operating-system-v2.zip
+career-operating-system-v2.tar.gz
+
 # OS
 .DS_Store
 Thumbs.db
