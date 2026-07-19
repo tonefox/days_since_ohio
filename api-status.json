@@ -1,14 +1,14 @@
 {
-  "last_run": "2026-06-19T16:10:22.788039+00:00",
-  "new_total": 25,
+  "last_run": "2026-07-19T14:25:26.583672+00:00",
+  "new_total": 12,
   "sources": [
     {
       "label": "Google News RSS",
       "requires_setup": false,
       "status": "ok",
-      "note": "No auth required. 812 articles scanned.",
-      "new_candidates": 62,
-      "last_checked": "2026-06-19T16:10:05.537252+00:00"
+      "note": "No auth required. 826 articles scanned.",
+      "new_candidates": 61,
+      "last_checked": "2026-07-19T14:25:10.373619+00:00"
     },
     {
       "label": "Reddit API (PRAW)",
@@ -17,7 +17,7 @@
       "note": "Add REDDIT_CLIENT_ID and REDDIT_CLIENT_SECRET to GitHub Secrets. Free at reddit.com/prefs/apps.",
       "setup_url": "https://www.reddit.com/prefs/apps",
       "new_candidates": 0,
-      "last_checked": "2026-06-19T16:10:05.537385+00:00"
+      "last_checked": "2026-07-19T14:25:10.373768+00:00"
     },
     {
       "label": "Columbus PD / Fire (public pages)",
@@ -33,11 +33,11 @@
         {
           "name": "Columbus Fire / EMS",
           "status": "error",
-          "error": "HTTPSConnectionPool(host='www.columbusfire.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.columbusfire.org', port=443) at 0x7fed4836cf20>, 'Connection to www.columbusfire.org timed out. (connect timeout=15)'))"
+          "error": "HTTPSConnectionPool(host='www.columbusfire.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.columbusfire.org', port=443) at 0x7f83683b7b90>, 'Connection to www.columbusfire.org timed out. (connect timeout=15)'))"
         }
       ],
       "new_candidates": 0,
-      "last_checked": "2026-06-19T16:10:22.786018+00:00"
+      "last_checked": "2026-07-19T14:25:26.581459+00:00"
     }
   ]
 }
